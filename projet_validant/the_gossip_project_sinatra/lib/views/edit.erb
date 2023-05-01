@@ -1,5 +1,27 @@
-<form action="/gossips/<%= @gossip.id %>/update" method="POST">
-  <input type="text" name="gossip_author" value="<%= @gossip.author %>" required>
-  <textarea name="gossip_content" required><%= @gossip.content %></textarea>
-  <input type="submit" value="Modifier le potin">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Ajoute les liens nécessaires pour inclure Bootstrap -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container"> <!-- Ajoute un conteneur pour centrer le formulaire -->
+    <form action="/gossips/<%= @gossip.id %>/update" method="POST">
+      <div class="form-group">
+        <label for="gossip_author">Auteur :</label>
+        <input type="text" class="form-control" name="gossip_author" id="gossip_author" value="<%= @gossip.author %>" required>
+      </div>
+      <div class="form-group">
+        <label for="gossip_content">Contenu :</label>
+        <textarea class="form-control" name="gossip_content" id="gossip_content" rows="5" required><%= @gossip.content %></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Modifier le potin">
+    </form>
+  </div>
+</body>
+</html>
