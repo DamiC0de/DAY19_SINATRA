@@ -3,6 +3,17 @@
 
 Nous allons faire une application sympatique en Sinatra
 
+## Rendu de l'application,
+
+![image](https://user-images.githubusercontent.com/129832702/235491235-b0ff8eb6-e740-4807-9eb6-5595db6b9d8e.png)
+
+![image](https://user-images.githubusercontent.com/129832702/235491323-a6cd2a4b-7a39-4767-95f8-a51429e1b651.png)
+
+![image](https://user-images.githubusercontent.com/129832702/235491389-e1d0dde8-d9c1-4400-a2e7-180680765cb3.png)
+
+![image](https://user-images.githubusercontent.com/129832702/235492017-b734554c-5a17-40f9-a645-3c254661f377.png)
+
+
 ## 1. Introduction
 
 Maintenant que tu sais faire des applications en Ruby pur comme un grand, on va enfin passer au web grâce à Sinatra ! Ce sera l'occasion de te prouver que les notions déjà acquises te permettent déjà de faire des choses sympas.
