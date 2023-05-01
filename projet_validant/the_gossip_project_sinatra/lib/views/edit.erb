@@ -1,0 +1,5 @@
+<form action="/gossips/<%= @gossip.id %>/update" method="POST">
+  <input type="text" name="gossip_author" value="<%= @gossip.author %>" required>
+  <textarea name="gossip_content" required><%= @gossip.content %></textarea>
+  <input type="submit" value="Modifier le potin">
+</form>

@@ -1,0 +1,8 @@
+<h1>Liste des Gossips</h1>
+<ul>
+  <% @all_gossips.each do |gossip| %>
+    <li>
+      Auteur: <%= gossip.author %>, Gossip: <%= gossip.content %>
+    </li>
+  <% end %>
+</ul>
