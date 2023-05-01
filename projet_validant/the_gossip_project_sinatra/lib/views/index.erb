@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <title>The Gossip Project</title>
-    <!-- Utilisation de Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  </head>
-  <body>
+<%= erb :'layouts/_header.html' %>
     <div class="container">
       <h1 class="mt-4">Mon super site de gossip, depuis le dossier views !</h1>
       <hr>
@@ -36,9 +28,4 @@
       <a href="/gossips/new/" class="btn btn-success">Créer un nouveau potin</a>
     </div>
 
-    <!-- Utilisation de Bootstrap JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<%= erb :'layouts/_footer.html' %>
