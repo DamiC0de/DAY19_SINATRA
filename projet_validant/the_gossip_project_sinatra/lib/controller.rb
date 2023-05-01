@@ -1,5 +1,6 @@
 require 'bundler'
 require 'gossip'
+require 'comment'
 
 Bundler.require
 
@@ -27,6 +28,7 @@ class ApplicationController < Sinatra::Base
   get '/gossips/:id' do
     @gossip_id = params['id'].to_i
     @gossip = Gossip.find(@gossip_id)
+    @comments = Comment.find_by_gossip_id(@gossip_id)
     erb :gossip_show
   end
 
@@ -39,5 +41,12 @@ class ApplicationController < Sinatra::Base
     gossip = Gossip.find(params['id'].to_i)
     gossip.update(params['gossip_author'], params['gossip_content'])
     redirect "/gossips/#{gossip.id}"
+  end
+
+  post '/gossips/:id/comment' do
+    gossip_id = params['id'].to_i
+    comment_content = params['comment_content']
+    Comment.new(nil, gossip_id, comment_content).save
+    redirect "/gossips/#{gossip_id}"
   end
 end

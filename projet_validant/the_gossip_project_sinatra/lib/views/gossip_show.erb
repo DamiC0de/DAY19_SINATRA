@@ -1,9 +1,48 @@
-<h1>Gossip N°<%= @gossip_id %></h1>
-<p>
-  Auteur: <%= @gossip.author %><br>
-  Gossip: <%= @gossip.content %>
-</p>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>The Gossip Project</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-4">Mon super site de gossip, depuis le dossier views !</h1>
+      <hr>
+      <h1>Gossip N°<%= @gossip_id %></h1>
+      <p>
+        <strong>Auteur:</strong> <%= @gossip.author %><br>
+        <strong>Gossip:</strong> <%= @gossip.content %>
+      </p>
+      
+      <h2>Commentaires :</h2>
+      <% if @comments.any? %>
+        <% @comments.each do |comment| %>
+          <div class="card mb-2">
+            <div class="card-body">
+              <p class="card-text"><%= comment.content %></p>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>Aucun commentaire pour le moment.</p>
+      <% end %>
+      
+      <h3>Ajouter un commentaire :</h3>
+      <form action="/gossips/<%= @gossip.id %>/comment" method="post">
+        <div class="form-group">
+          <label for="comment_content">Votre commentaire :</label>
+          <textarea class="form-control" name="comment_content" id="comment_content" rows="4" cols="50"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
 
-<a href="/gossips/<%= @gossip_id %>/edit">Éditer le potin</a>
-
-<a href="/">Lien pour revenir à la page des potins</a>
+      <a class="btn btn-warning mt-4" href="/gossips/<%= @gossip_id %>/edit">Éditer le potin</a>
+      <a class="btn btn-secondary mt-4" href="/">Retour à la liste des potins</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
